@@ -167,6 +167,7 @@ namespace Warehouse
             product.UnitsInStock = short.Parse(txtUpdateStock.Text);
 
             product.Status = DAL.ORM.Enum.Status.Updated;
+            product.UpdateDate = DateTime.Now;
 
             db.SaveChanges();
 
@@ -182,6 +183,7 @@ namespace Warehouse
             cat.CategoryDescription = txtUpdateCategoryDescription.Text;
 
             cat.Status = DAL.ORM.Enum.Status.Updated;
+            cat.UpdateDate = DateTime.Now;
 
             db.SaveChanges();
 
@@ -198,6 +200,7 @@ namespace Warehouse
             sup.PhoneNumber = maskedTxtUpdatePhone.Text;
 
              sup.Status = DAL.ORM.Enum.Status.Updated;
+             sup.UpdateDate = DateTime.Now;
 
             db.SaveChanges();
 
@@ -213,6 +216,7 @@ namespace Warehouse
 
 
             pro.Status = DAL.ORM.Enum.Status.Deleted;
+            pro.DeleteDate = DateTime.Now;
 
             db.SaveChanges();
 
@@ -228,6 +232,7 @@ namespace Warehouse
             cat.CategoryName = txtUpdateCategoryName.Text;
             cat.CategoryDescription = txtUpdateCategoryDescription.Text;
             cat.Status = DAL.ORM.Enum.Status.Deleted;
+            cat.DeleteDate = DateTime.Now;
 
             db.SaveChanges();
 
@@ -245,8 +250,9 @@ namespace Warehouse
             sup.Country = txtUpdateSupplierCountry.Text;
             sup.PhoneNumber = maskedTxtUpdatePhone.Text;
             sup.Status = DAL.ORM.Enum.Status.Deleted;
+            sup.DeleteDate = DateTime.Now;
 
-              db.SaveChanges();
+            db.SaveChanges();
 
             BringSupplierList();
 
